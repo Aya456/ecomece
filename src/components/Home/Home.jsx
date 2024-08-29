@@ -13,6 +13,7 @@ import Slider from 'react-slick'
 import { Helmet } from 'react-helmet'
 import { cartContext } from '../Context/CartContext'
 import Products from '../Products/Products'
+import CategorySlider from '../CategorySlider/CategorySlider'
 
 
 
@@ -63,6 +64,9 @@ return (
             <img src={sideImage1} alt="sideImage1" className='w-full h-[150px] rounded' />
             <img src={sideImage2} alt="sideImage2" className='w-full h-[150px] rounded' />
             </div>
+          </div>
+          <div className='mt-16'>
+            <CategorySlider/>
           </div>
           <div className='mt-16'>
             <Products/>
