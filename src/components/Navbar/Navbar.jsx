@@ -1,5 +1,5 @@
 
-import React, { useContext , useState } from 'react'
+import React, { useContext , useEffect, useState } from 'react'
 import styles from "./Navbar.module.css"
 import { initFlowbite } from 'flowbite';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
@@ -11,12 +11,16 @@ export default function Navbar() {
         const navigate = useNavigate()
     const {numberOfCartItems} = useContext(cartContext)
     const {token , setToken} = useContext(authContext)
-    const {numOfItemOfWishlist} = useContext(WishlistContext)
+    const {numOfItemOfWishlist,getWishlistItems} = useContext(WishlistContext)
     function handelLogout(){
     localStorage.removeItem("token")
     setToken(null)
     navigate("/Login")
 }
+  useEffect(() => {
+    getWishlistItems()
+  }, [])
+  
     return (
         <>
         

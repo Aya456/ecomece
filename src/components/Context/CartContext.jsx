@@ -60,7 +60,7 @@ export default function CartContextProvider({children}) {
     })
   }
   async function onlinePayment(shippingAddress) {
-    await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://ecomece-pi.vercel.app`,{shippingAddress},{headers})
+    await axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://ecomece-pi.vercel.app`,{shippingAddress},{headers})
     .then((res)=>{
       window.location.href = res.data.session.url
       clearCart()
