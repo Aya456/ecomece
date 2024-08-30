@@ -60,7 +60,7 @@ export default function WishlistContextProvider({children}) {
     }
     
   }, [localStorage.getItem("token")])
-    return <WishlistContext.Provider value={{addToWishlist , numOfItemOfWishlist , wishlistProducts , wishlistItems , deleteWishlistItem}}>
+    return <WishlistContext.Provider value={{ getWishlistItems,addToWishlist , numOfItemOfWishlist , wishlistProducts , wishlistItems , deleteWishlistItem}}>
         {children}
     </WishlistContext.Provider>
 }

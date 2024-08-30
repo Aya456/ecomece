@@ -1,6 +1,13 @@
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { WishlistContext } from "../Context/WishlistContext";
 
 export default function AllOrders() {
+ const{getWishlistItems}= useContext(WishlistContext)
+  useEffect(() => {
+    getWishlistItems()
+  }, [])
+  
   return (
     <>
       <div className="bg-[#F8F9FA] w-3/4 mx-auto rounded-md my-6 md:h-[200px]">
