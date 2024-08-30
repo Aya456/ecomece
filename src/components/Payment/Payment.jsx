@@ -33,9 +33,9 @@ export default function Payment() {
         initialValues: user,
         onSubmit: checkOut,
         validationSchema: yup.object().shape({
-            details: yup.string().required().min(10 , "Details must be more than 10 characters "),
+            details: yup.string().required().min(5 , "Details must be more than 5 characters "),
             phone: yup.string().required("Phone Number is required").matches(/^01[0125][0-9]{8}$/ , "Must be valid egyptian phone number"),
-            city: yup.string().required().min(6 , "Your Address must be more than 6 characters ")
+            city: yup.string().required().min(3 , "Your Address must be more than 3 characters ")
         })
     })
 return (
